@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Ulang Tahun 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #c3f6c2;
+      color: #333;
+    }
+    header {
+      background-color: #9be7a3;
+      padding: 20px;
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      color: #2e7d32;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    nav {
+      background-color: #b2dfdb;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #004d40;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .photo {
+        width: 50%;
+    }
+    .gift-box {
+      display: none;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .gift-box img {
+      width: 150px;
+      animation: bounce 1s infinite;
+    }
+    button {
+      background-color: #66bb6a;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #4caf50;
+    }
+    footer {
+      background-color: #81c784;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #2e7d32;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Selamat Ulang Tahun!
+  </header>
+
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#hadiah">Hadiah</a>
+    <a href="#tentang">Tentang</a>
+  </nav>
+
+  <section id="beranda">
+    <h2>Pesan Spesial</h2>
+    <p>Kayla Maghfira yang pernah kuringkas menjadi "ILA"! Hari ini adalah hari spesialmu dan aku ingin kamu tahu betapa berharganya kamu. Semoga semua impianmu terwujud dan hidupmu dipenuhi dengan kebahagiaan.</p>
+  </section>
+
+  <section id="galeri">
+    <h2>Galeri Kenangan</h2>
+      <div class="gallery" id="gallery">
+      <div class="photo"><img src="WhatsApp Image 2025-08-03 at 21.30.58.jpeg" alt="KT">
+        <p>Ini ajadah, terlalu banyak kenangan kalau mau di up, mungkin juga terlalu lama untuk dikenang? HAHAHA</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="hadiah">
+    <h2>Hadiah Spesial</h2>
+    <div style="text-align: center;">
+      <button onclick="showGift()">PENCET!!!!!!!</button>
+      <div class="gift-box" id="giftBox">
+        <img src="Screenshot 2025-08-03 211813.png" alt="foto" >
+        <p>Jangan lupa bahagia:) </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <h2>Tentang Web Ini</h2>
+    <p>Saya buatkan ucapan pakai web supaya ada bisa muingat kalau saya pernah buatkan web untuk ucapan ulang taun walaupun ala kadarnya karena ini saya buat ditengah tengah kesibukan persiapan 17 agustus 2025, sekaligus menjadi agustus terakhir yg mungkin dimeriahkan bersama sebagai pelajar sman 5 wajo. Mungkin ini terlalu sederhana untuk mengucapkan selamat ulang tahun, tapi percaya saya buat ini dengan niat dan tekad yg kuat untuk bisa membuat ulang tahun kali ini berkesan dan supaya kamu merasakan bahwa saya memang tetap selalu ada disini. Sekali lagi selamat ulang tahun yang ke 17, cieee sweetseventeenn, tetap menjadi manusia yang selalu pada jalan yg baik dan positif. Bagaimana warnanya webnya? musuka ji? kalau dak salah kamu suka warna hijau hijau toh, tapi nda paham ka yg hijau begini atau lain, jadi gini aja hehe.INTINYA HAPPY BIRTHHDAYYYYYYYY 🍀</p>
+  </section>
+
+  <footer>
+    &copy; 9 Agustus 2025 from U know lah
+  </footer>
+
+  <script>
+    function showGift() {
+      const box = document.getElementById('giftBox');
+      box.style.display = 'block';
+    }
+
+    function previewImages(event) {
+      const files = event.target.files;
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = '';
+      for (let i = 0; i < files.length; i++) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          gallery.appendChild(img);
+        }
+        reader.readAsDataURL(files[i]);
+      }
+    }
+  </script>
+</body>
+</html>
